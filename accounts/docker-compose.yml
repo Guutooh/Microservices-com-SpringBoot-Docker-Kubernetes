@@ -1,0 +1,39 @@
+services:
+  accounts:
+    image: "gutooh/accounts"
+    container_name: accounts-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - microservices
+
+  loans:
+    image: "gutooh/loans"
+    container_name: loans-ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - microservices
+
+  cards:
+    image: "gutooh/cards"
+    container_name: cards-ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - microservices
+networks:
+  microservices:
+    driver: "bridge"
