@@ -24,3 +24,10 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8071/" # O optional indica que se a conexão não der certo, que pode
     # iniciar o projeto normalmente, pois essas configurações não afetará em nada o funcionamento.
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
